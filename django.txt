@@ -1,0 +1,39 @@
+para iniciar um projeto usamos:
+django-admin startproject nome_do_project .
+
+para iniciar o servidor:
+python manage.py runserver
+
+a pasta criada com o 1° comando, é o coração do projeto.
+Já para criar um novo APP usamos o comando:
+python manage.py startapp nome_do_app
+e para esse APP funcionar, é necessário declarar ele dentro do settings.py na pasta do project
+
+
+*Camadas do django;
+*Apps, mostra o nome do app e suas configurações.
+*Tests, server para realizer testes no projeto.
+*models, são os modelos/tabelas do banco de dados.
+*views, é a lógica da aplicação.
+*admin, relacionado com admin do django, server como administração do app.
+
+Django por si, já tem algumas tabelas de gestão de usuário pré definidas, ajudando os usuários, no terminal digite:
+
+python manage.py makemigrations
+
+Assim montando uma migration onde terá comandos para o banco de dados.
+Para criar um migrate, usamos:
+
+python manage.py migrate
+
+criará um script de banco de dados e criará dentro do sqlite.
+SEMPRE que houver mudanças no nosso arquivo Models, é necessário realizar a seguinte sequência:
+*makemigrations, para detectar as mudanças dos models.
+*migrate, para informar ao banco de dados as mudanças.
+
+Para criar um super_usuario, utilizamos:
+
+python manage.py createsuperuser
+
+Assim preenchendo oque é solicitado, após inicializar o servidor e ir para /admin, usamos o mesmo user para logar.
+
