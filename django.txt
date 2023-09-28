@@ -46,3 +46,14 @@ vamos adicionar nela os mesmos.
 
 Dentro de Settings, na parte onde temos TEMPLATES, devemos adicionar o diretório do nosso template base criado dentro da pasta APP,
 sendo a base de todo nosso sistema
+
+Criação de novo endereço:
+*1° Criamos uma nova URL;
+*2° Criamos uma nova View;
+*3° Caso seja necessario, criar um Forms;
+*4° Criar um HTML para a pagina;
+5° Conectar tudo.
+
+
+Para criar campo de Validação SEMPRE devemos iniciar a função como 
+def clean_NomeDoCampo(self):
