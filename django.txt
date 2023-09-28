@@ -44,5 +44,5 @@ TEMPLATES
 A pasta template, não necessita ser informada no diretório, pois o django já compreende que quando criamos a pasta com o nome 'templates'
 vamos adicionar nela os mesmos.
 
-Superuser = dalmas
-Superpassword = mundongo132 ou mundongo_132
+Dentro de Settings, na parte onde temos TEMPLATES, devemos adicionar o diretório do nosso template base criado dentro da pasta APP,
+sendo a base de todo nosso sistema
