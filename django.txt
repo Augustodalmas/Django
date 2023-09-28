@@ -43,6 +43,3 @@ TEMPLATES
 
 A pasta template, não necessita ser informada no diretório, pois o django já compreende que quando criamos a pasta com o nome 'templates'
 vamos adicionar nela os mesmos.
-
-Superuser = dalmas
-Superpassword = mundongo132 ou mundongo_132
