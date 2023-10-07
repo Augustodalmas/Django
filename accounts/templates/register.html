@@ -1,31 +1,147 @@
 {% extends "base_fix.html" %}
-
 {% block content %}
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-    <form method="post">
-        {% csrf_token %}
+.login-page {
+  width: 650px;
+  padding: 6% 0 0;
+  margin: auto;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.form {
+  width: 50%;
+  display: inline-block; /**/
+  position: relative;
+  z-index: 1;
+  background: #e1e1e1;
+  max-width: 3420px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form input[type="submit"]{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4ad0fd;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form input[type="submit"]:hover,
+.form input[type="submit"]:active,
+.form input[type="submit"]:focus {
+    background: #0096c7;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
 
-            <div class="form-group">
-                {{ user_form.username.errors }}
-                <label>Usuário: </label>
-                {{ user_form.username }}
+.er{
+  width: 50%;
+  display: flex;
+  color: red;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+</style>
+
+    <div class="login-page">
+        <div class="form-container">
+            <div class="form">
+                <form class="login-form" method="post">
+                    {% csrf_token %}
+
+                        <div class="form-group">
+                            <label>Usuário </label>
+                            {{ user_form.username }}
+                        </div>
+                        <div class="form-group">
+                            <label>Senha </label>
+                            {{ user_form.password1 }}
+                        </div>
+                        <div class="form-group">
+                            <label>Confirmação de Senha </label>
+                            {{ user_form.password2 }}
+                        </div>
+                    <div class="form-group">
+                        <input type="submit" value="Entrar">
+                    </div>
+                        <p class="message">Already registered? <a href="http://127.0.0.1:8000/login/">login an account</a></p>
+                </form>
             </div>
-
-            <div class="form-group">
-                {{ user_form.password1.errors }}
-                <label>Senha: </label>
-                {{ user_form.password1 }}
+            <div class="er">
+                <strong>
+                    {{ user_form.username.errors }}
+                    {{ user_form.password1.errors }}
+                    {{ user_form.password2.errors }}
+                </strong>
             </div>
-
-            <div class="form-group">
-                {{ user_form.password2.errors }}
-                <label>Confirmação de Senha: </label>
-                {{ user_form.password2 }}
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Cadastrar">
-            </div>
-    </form>
-
+        </div>
+    </div>
 {% endblock %}
