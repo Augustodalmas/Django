@@ -10,7 +10,7 @@
       text-align: center;
       transition: all 0.3s ease;
       max-width: 500px;
-      margin: 20px auto 0;
+      margin: 30px auto 0;
       margin-bottom: 20px;
     }
 
@@ -88,9 +88,11 @@
       <p><strong>Preço:</strong> R$ {{ object.value }}</p>
   </div>
   {% if user.is_authenticated %}
-  <div class="buttons-container">
-    <a href="{% url 'update_car' pk=object.pk %}" class="btn btn-primary">Editar</a>
-    <a href="{% url 'delete_car' pk=object.pk %}" class="btn btn-danger">Deletar</a>
-  </div>
+    {% if object.owner == user %}
+    <div class="buttons-container">
+      <a href="{% url 'update_car' pk=object.pk %}" class="btn btn-primary">Editar</a>
+      <a href="{% url 'delete_car' pk=object.pk %}" class="btn btn-danger">Deletar</a>
+    </div>
+    {% endif %}
   {% endif %}
 {% endblock %}

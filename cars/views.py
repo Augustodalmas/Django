@@ -1,11 +1,11 @@
 from cars.models import Cars
-from django.http import HttpResponseRedirect
+from django.shortcuts import render
 from cars.forms import CarModelForm
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
-from django.urls import reverse_lazy
-from django.shortcuts import redirect
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.http import Http404
 
 #Utilizando class listview
 class CarsListView(ListView):
@@ -28,6 +28,10 @@ class NewCreateCar(CreateView):
     template_name = 'new_car.html'
     success_url = '/cars/'
 
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
 
 class DetailCarsView(DetailView):
     model = Cars
@@ -42,6 +46,13 @@ class UpdateCarsView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('detail_cars', kwargs={'pk' : self.object.pk})
+    
+    def get_object(self, queryset=None):
+        car = super().get_object(queryset)
+        
+        if car.owner != self.request.user:
+            raise Http404("Você não tem permissão para acessar esta página.")
+        return car
 
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
@@ -49,3 +60,7 @@ class DeleteCarView(DeleteView):
     model = Cars
     template_name = 'car_delete.html'
     success_url = '/cars/'
+
+
+def handler404(request, exception):
+    return render(request, '404.html', status=404)

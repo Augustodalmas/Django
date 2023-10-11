@@ -7,7 +7,6 @@ class CarModelForm(forms.ModelForm):
         fields = '__all__'
 
 
-
     def __init__(self, *args, **kwargs):
         super(CarModelForm, self).__init__(*args, **kwargs)
         self.fields['owner'].widget = forms.TextInput(attrs={'readonly': 'readonly'})
