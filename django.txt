@@ -62,3 +62,21 @@ def clean_NomeDoCampo(self):
 
 
 CBV's
+
+SIGNALS
+recurso que permite executar eventos durante CRUD;
+podemos fazer notificação de pre-save ou post save de algo no banco, como descobrir quantos carros temos em estoque
+pre-delete ou post delete, qualquer elemento do crud;
+
+1°criar arquivo signals.py;
+2° em app.py, criar uma função ready, importando os signals;
+3° em signals devemos criar nossas regras:
+from django.db.models.signals import pre_save, pre_delete, post_Save, post_delete
+from django.dispatch import receiver
+from cars.models import Car
+
+@receiver(pre_Save, sender=Car) #decorator para o django entender que estamos recebendo um informação
+ def qualquer_nome(sender, instance, **kwargs)
+    #sender = tabela que envia o evento
+    #instance = informações que estão sendo enviados
+    

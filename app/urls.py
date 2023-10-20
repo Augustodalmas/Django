@@ -22,7 +22,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from cars.views import CarsListView, NewCreateCar, DetailCarsView, UpdateCarsView, DeleteCarView
 from accounts.views import register_view, login_view, logout_view
-from cars.views import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,6 +34,3 @@ urlpatterns = [
     path('car/<int:pk>/update', UpdateCarsView.as_view(), name='update_car'),
     path('car/<int:pk>/delete', DeleteCarView.as_view(), name='delete_car'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-handler404 = handler404
