@@ -79,4 +79,7 @@ from cars.models import Car
  def qualquer_nome(sender, instance, **kwargs)
     #sender = tabela que envia o evento
     #instance = informações que estão sendo enviados
-    
+   
+
+pip freeze > requirements.txt
+pip install -r /requirements.txt/
