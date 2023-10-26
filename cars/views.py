@@ -7,7 +7,13 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import Http404
 
-#Utilizando class listview
+
+class MainPage(ListView):
+    model = Cars
+    template_name = '404.html'
+
+
+# Utilizando class listview
 class CarsListView(ListView):
     model = Cars
     template_name = 'cars.html'
@@ -19,7 +25,7 @@ class CarsListView(ListView):
         if search:
             cars = Cars.objects.filter(model__icontains=search)
         return cars
-    
+
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
 class NewCreateCar(CreateView):
@@ -45,11 +51,11 @@ class UpdateCarsView(UpdateView):
     template_name = 'car_update.html'
 
     def get_success_url(self):
-        return reverse_lazy('detail_cars', kwargs={'pk' : self.object.pk})
-    
+        return reverse_lazy('detail_cars', kwargs={'pk': self.object.pk})
+
     def get_object(self, queryset=None):
         car = super().get_object(queryset)
-        
+
         if car.owner != self.request.user:
             raise Http404("Você não tem permissão para acessar esta página.")
         return car

@@ -83,3 +83,25 @@ from cars.models import Car
 
 pip freeze > requirements.txt
 pip install -r /requirements.txt/
+
+
+BANCO DE DADOS POSTGRESQL
+Para django nao importa o banco de dados que usamos, pois ele utiliza as configurações do ORM do django para fazer todo os códigos sqlite
+Pórem caso queira utilizar um banco NoSQL ai terá que ser feito algumas mudanças no código;
+Para adicionar um banco de dados, devemos alterar no coração do projeto settings.py, em databases adicionar o banco que queremos, junto com 
+suas informações adicionais.
+Os drives do django e do banco POSTGRESQL são muito similiares, tendo um ótimo desempenho e compatibilidade.
+Para instalar ele no pc, é o famoso next next, aceito aceito.
+Após no cmd digitar psql --version para ver se não teremos erros. se der erro é necessario adiciona-lo as variaveis de ambiente do sistema.
+Dentro das variaveis de sistema, procurar por Path >> novo e adicionar:  c:/programfiles/POSTGRESQL/15/bin (local onde for instalado)
+é necessario uma biblioteca para fazer o interligamento entre django e postgre psycopg2
+No arquivo settings deverá ter os seguintes itens;
+
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'NomeDaTabelaCriada',
+        'USER': 'postgres', #DEFAULT
+        'PASSWORD': 'SenhaAdicionada',
+        'HOST': 'localhost', 
+        'PORT': '5432', #Porta Padrão POSTGRESQL
+
+        após isso deverá ser feito um migrate

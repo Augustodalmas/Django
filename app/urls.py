@@ -15,15 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-#Esta é a camada onde orientamos nossas URLS do site
+# Esta é a camada onde orientamos nossas URLS do site
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from cars.views import CarsListView, NewCreateCar, DetailCarsView, UpdateCarsView, DeleteCarView
+from cars.views import CarsListView, NewCreateCar, DetailCarsView, UpdateCarsView, DeleteCarView, MainPage
 from accounts.views import register_view, login_view, logout_view
 
 urlpatterns = [
+    path('', MainPage.as_view()),
     path('admin/', admin.site.urls),
     path('register/', register_view, name='register'),
     path('login/', login_view, name='login'),
