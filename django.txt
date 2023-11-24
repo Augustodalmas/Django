@@ -86,6 +86,8 @@ pip install -r /requirements.txt/
 
 
 BANCO DE DADOS POSTGRESQL
+PARA ACESSAR O BANCO, USAMOS "psql -U usuario"
+
 Para django nao importa o banco de dados que usamos, pois ele utiliza as configurações do ORM do django para fazer todo os códigos sqlite
 Pórem caso queira utilizar um banco NoSQL ai terá que ser feito algumas mudanças no código;
 Para adicionar um banco de dados, devemos alterar no coração do projeto settings.py, em databases adicionar o banco que queremos, junto com 
@@ -105,3 +107,13 @@ No arquivo settings deverá ter os seguintes itens;
         'PORT': '5432', #Porta Padrão POSTGRESQL
 
         após isso deverá ser feito um migrate
+
+
+
+
+DJANGO SHELL
+o django shell assim como qualquer outro shell, server como um interpretador de códigos interativo, podendo ser utilizado
+para fazer qualquer coisa do django, porem de uma forma mais rapida.
+podemos fazer consulta nos bancos de dados de uma forma muito agil. *Principal função
+para abrir o terminal do django usamos
+Python manage.py shell
