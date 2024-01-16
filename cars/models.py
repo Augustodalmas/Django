@@ -34,7 +34,7 @@ class Cars(models.Model):
 # Criação de um Model para inventario de carros
 class CarsInventory(models.Model):
     cars_count = models.IntegerField()
-    cars_values = models.FloatField(null=True)
+    cars_values = models.FloatField(null=True, )
     # Campo de data com autoincremento da data atual de atualização
     create_at = models.DateTimeField(auto_now_add=True)
 
