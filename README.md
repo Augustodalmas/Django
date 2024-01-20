@@ -1,3 +1,2 @@
 # Django
-Este projeto terá todo o meu desenvolvimento com o Django, onde estou iniciando meus estudos.
-Curso sendo realizado pelo Django Master do PycodeBR.
+Projeto realizado em Django, onde foi possivel aplicar todas as habilidades desenvolvidas durante meu curso Django master, onde criamos uma aplicação web do zero até seu deply na AWS utlizando Uwsgi e Nginx.
