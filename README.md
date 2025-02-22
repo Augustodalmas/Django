@@ -13,7 +13,7 @@ Este projeto não é apenas uma aplicação, mas uma jornada de aprendizado. Des
 - **ORM Django:** Simplificação da interação com o banco de dados para uma programação mais eficiente.
 - **Automatização com Signals:** Bio automática e inventário de carros para uma experiência do usuário mais dinâmica.
 
-### Deploy Profissional na AWS:
+### Deploy Profissional na AWS - Serviço finalizado devido a cobranças:
 - Utilização das horas grátis da AWS para criação de instância EC2.
 - Configuração detalhada no servidor Ubuntu, incluindo Django, Nginx e uWSGI para um deploy profissional.
 
