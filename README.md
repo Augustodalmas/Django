@@ -17,8 +17,18 @@ Este projeto não é apenas uma aplicação, mas uma jornada de aprendizado. Des
 - Utilização das horas grátis da AWS para criação de instância EC2.
 - Configuração detalhada no servidor Ubuntu, incluindo Django, Nginx e uWSGI para um deploy profissional.
 
-## Como Contribuir
-Sinta-se à vontade para explorar, clonar ou contribuir para este projeto. Se tiver sugestões, melhorias ou correções, ficarei feliz em receber seu pull request!
+## Como utilizar
+Primeiramente precisamos fazer o clone do projeto:
+```Git clone https://github.com/Augustodalmas/Django.git```
+Após isso, será necessário instalar um VirtualENV:
+```Python -m venv venv```
+Com a VirtualENV instalada, precisamos inicializa-lá e fazer a instalação do requirements:
+```.\venv\script\activate```
+```pip install -r requirements.txt```
+Com tudo isso feito, agora vamos migrar o banco de dados:
+```python manage.py migrate```
+Agora é so iniciar a aplicação!
+```python manage.py runserver```
 
 ## Contato
 Você pode entrar em contato comigo augustodalmas@dalmas.tech, ficarei feliz em discutir ideias ou colaborações.
