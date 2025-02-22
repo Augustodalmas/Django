@@ -18,17 +18,17 @@ Este projeto não é apenas uma aplicação, mas uma jornada de aprendizado. Des
 - Configuração detalhada no servidor Ubuntu, incluindo Django, Nginx e uWSGI para um deploy profissional.
 
 ## Como utilizar
-Primeiramente precisamos fazer o clone do projeto:
-```Git clone https://github.com/Augustodalmas/Django.git```
-Após isso, será necessário instalar um VirtualENV:
-```Python -m venv venv```
-Com a VirtualENV instalada, precisamos inicializa-lá e fazer a instalação do requirements:
-```.\venv\script\activate```
-```pip install -r requirements.txt```
-Com tudo isso feito, agora vamos migrar o banco de dados:
-```python manage.py migrate```
-Agora é so iniciar a aplicação!
-```python manage.py runserver```
+Primeiramente precisamos fazer o clone do projeto:<br>
+```Git clone https://github.com/Augustodalmas/Django.git```<br>
+Após isso, será necessário instalar um VirtualENV:<br>
+```Python -m venv venv```<br>
+Com a VirtualENV instalada, precisamos inicializa-lá e fazer a instalação do requirements:<br>
+```.\venv\script\activate```<br>
+```pip install -r requirements.txt```<br>
+Com tudo isso feito, agora vamos migrar o banco de dados:<br>
+```python manage.py migrate```<br>
+Agora é so iniciar a aplicação!<br>
+```python manage.py runserver```<br>
 
 ## Contato
 Você pode entrar em contato comigo augustodalmas@dalmas.tech, ficarei feliz em discutir ideias ou colaborações.
